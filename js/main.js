@@ -1,20 +1,20 @@
-//registrando a service worker
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
       let reg;
       reg = await navigator.serviceWorker.register('/sw.js', { type: "module" });
 
-      console.log('Service worker registrada! 😎', reg);
+      console.log('Service worker registrada! ', reg);
       postNews();
     } catch (err) {
-      console.log('😥 Service worker registro falhou: ', err);
+      console.log(' Service worker registro falhou: ', err);
     }
   });
 }
 
 let param = 'AI'
-const apiKey = '4abf7d67ddef4ae3817c6f0f72c44afa';
+const apiKey = '1c5598189934416296973da78eec0273';
 let url = `https://newsapi.org/v2/everything?q=${param}&apiKey=${apiKey}`;
 const main = document.querySelector('main');
 const botao = document.getElementById('buscar');
